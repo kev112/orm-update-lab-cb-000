@@ -20,4 +20,29 @@ class Student
     DB[:conn].execute(sql)
   end
 
+  def self.drop_table
+    DB[:conn].execute(sql)
+  end
+
+  def save
+    DB[:conn].execute(sql)
+  end
+
+  def self.create
+    DB[:conn].execute(sql)
+  end
+
+  def self.new_from_db
+    DB[:conn].execute(sql)
+  end
+
+  def self.find_by_name
+    DB[:conn].execute(sql)
+  end
+
+  def update
+    DB[:conn].execute(sql)
+  end
+
+
 end
