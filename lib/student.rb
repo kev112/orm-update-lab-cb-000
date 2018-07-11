@@ -13,7 +13,7 @@ class Student
   end
 
   def self.create_table
-    sql = SQL <<-
+    sql =  <<-SQL
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
       name TEXT,
@@ -25,7 +25,7 @@ class Student
   end
 
   def self.drop_table
-    sql = SQL <<-
+    sql = <<-SQL
       DROP TABLE IF EXISTS students
     SQL
     DB[:conn].execute(sql)
@@ -41,7 +41,7 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql = SQL <<-
+    sql = <<-SQL
       SELECT *
       FROM students
       WHERE name = ?
@@ -52,7 +52,7 @@ class Student
   end
 
   def update
-    sql = SQL <<-
+    sql = <<-SQL
       UPDATE students SET name = ?, grade = ? WHERE id = ?
     SQL
     DB[:conn].execute(sql, self.name, self.grade, self.id)
@@ -62,7 +62,7 @@ class Student
     if self.id
       self.update
     else
-      sql = SQL <<-
+      sql = <<-SQL
         INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
