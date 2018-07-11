@@ -27,7 +27,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.create
+  def self.create(name, grade)
     sql = SQL <<-
 
     SQL
