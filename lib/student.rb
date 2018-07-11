@@ -34,11 +34,8 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.new_from_db
-    sql = SQL <<-
-
-    SQL
-    DB[:conn].execute(sql)
+  def self.new_from_db(student)
+    self.new(student[0], student[1], student[2])
   end
 
   def self.find_by_name(name)
