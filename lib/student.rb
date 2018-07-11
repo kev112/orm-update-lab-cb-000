@@ -28,10 +28,8 @@ class Student
   end
 
   def self.create(name, grade)
-    sql = SQL <<-
-
-    SQL
-    DB[:conn].execute(sql)
+    student = self.new(name, grade)
+    student.save
   end
 
   def self.new_from_db(student)
